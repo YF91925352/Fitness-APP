@@ -1,0 +1,20 @@
+import { useState, useEffect } from "react";
+
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    /* 只在最开始的时候执行一次 */
+    const media = window.matchMedia(query);
+    setMatches(media.matches);
+    const listener = () => {
+      setMatches(media.matches);
+    };
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, [query]);
+
+  return matches;
+};
+
+export default useMediaQuery;
