@@ -1,10 +1,10 @@
 import Logo from "@/assets/Logo.png";
-import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import ActionButton from "@/shared/ActionButton";
 interface Props {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
@@ -16,7 +16,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreen = useMediaQuery("(min-width:1060px)");
   return (
     <nav>
-      <div className={`${flexSetting} z-99 fixed top-0 w-full py-6 `}>
+      <div className={`${flexSetting} fixed top-0 z-20 w-full py-6 `}>
         <div className={`${flexSetting} mx-auto w-5/6 `}>
           <div className={`${flexSetting} w-full gap-16`}>
             {/* Left Side */}
@@ -48,7 +48,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                 </div>
                 <div className={`${flexSetting} text-m gap-4`}>
                   <p>Sign In</p>
-                  <button>Become a member</button>
+                  <ActionButton setSelectedPage={setSelectedPage}>
+                    Become a member
+                  </ActionButton>
                 </div>
               </div>
             ) : (
@@ -62,6 +64,40 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
           </div>
         </div>
       </div>
+      {/* Mobile Menu */}
+      {!isAboveMediumScreen && isMenuToggled && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-orange-200 drop-shadow-lg">
+          {/* Close Button */}
+          <div className="flex justify-end p-16">
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <XMarkIcon className="text-grey-500 h-6 w-6" />
+            </button>
+          </div>
+          {/* Menu Items */}
+          <div className="ml-[30%] flex flex-col gap-10 text-2xl">
+            <Link
+              page="Home"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Benefits"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Our Classes"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            <Link
+              page="Contact Us"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

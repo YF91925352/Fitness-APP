@@ -4,10 +4,12 @@ import { SelectedPage } from "./shared/types";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
+    SelectedPage.ContactUs
   );
+  console.log(selectedPage);
+
   return (
-    <div className="app bg-gray-20">
+    <div className="app bg-orange-100">
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
   );
