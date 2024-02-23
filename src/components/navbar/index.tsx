@@ -6,17 +6,21 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import ActionButton from "@/shared/ActionButton";
 interface Props {
+  isTopPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 }
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const flexSetting = "flex items-center justify-between";
   const isAboveMediumScreen = useMediaQuery("(min-width:1060px)");
+  const navbarBackground = isTopPage ? "" : "bg-orange-200";
   return (
     <nav>
-      <div className={`${flexSetting} fixed top-0 z-20 w-full py-6 `}>
+      <div
+        className={`${flexSetting} ${navbarBackground} fixed top-0 z-20 w-full py-6 `}
+      >
         <div className={`${flexSetting} mx-auto w-5/6 `}>
           <div className={`${flexSetting} w-full gap-16`}>
             {/* Left Side */}
