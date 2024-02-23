@@ -10,7 +10,7 @@ interface Props {
 const ActionButton = ({ children, setSelectedPage }: Props) => {
   return (
     <AnchorLink
-      className=" cursor-pointer  rounded-md bg-amber-400 px-4 py-2 hover:bg-rose-200 hover:text-white"
+      className=" cursor-pointer  rounded-md bg-amber-400 px-4 py-2 hover:bg-orange-800 hover:text-white"
       href={SelectedPage.ContactUs}
       onClick={() => setSelectedPage(SelectedPage.ContactUs)}
     >
