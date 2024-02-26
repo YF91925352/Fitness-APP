@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const Class = ({ name, description, image, color }: Props) => {
-  const overlayStyles = `p-5 absolute  z-30 flex
+  const overlayStyles = `p-5 absolute  flex
 h-[300px] w-[300px] flex-col items-center justify-center
 whitespace-normal bg-rose-300 text-center text-white
 opacity-0 transition duration-500 hover:opacity-90 rounded-md`;
