@@ -2,6 +2,7 @@ import Header from "@/shared/Header";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 
 interface Props {
   setSelectedPage: (value: SelectedPage) => void;
@@ -24,7 +25,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
   };
 
   return (
-    <section id="contactus" className="mx-auto  w-5/6 pt-20 pb-32">
+    <section id="contactus" className="mx-auto  w-5/6 pt-28 pb-32">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
       >
@@ -126,6 +127,23 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 SUBMIT
               </button>
             </form>
+          </motion.div>
+          <motion.div
+            className="mt-12 basis-3/5 md:-mt-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <img
+              className="w-full"
+              alt="contact-us-page-graphic"
+              src={ContactUsPageGraphic}
+            />
           </motion.div>
         </div>
       </motion.div>
