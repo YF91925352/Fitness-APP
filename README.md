@@ -19,7 +19,7 @@ Welcome to our Fitness Company's website! This platform is built with TypeScript
 
 ## Getting Started
 
-1. Visit our website: [Fitness APP]([https://www.yourfitnesscompany.com](https://fitness-8abd1lu3m-yf91925352.vercel.app/)).
+1. Visit our website: [Fitness APP] ([https://www.yourfitnesscompany.com](https://fitness-8abd1lu3m-yf91925352.vercel.app/)).
 
 2. Sign up for a personalized account to unlock exclusive features.
 
