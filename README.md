@@ -2,6 +2,8 @@
 
 Welcome to our Fitness Company's website! This platform is built with TypeScript, React, Tailwind CSS, Framer Motion, and leverages the power of React Hooks to provide an engaging and interactive fitness experience.
 
+## Overview
+![ScreenRecording2024-02-26at15 20 38-ezgif com-crop](https://github.com/YF91925352/Fitness-APP/assets/113684176/655d87d6-06fe-4a32-b1a7-7bca6e1d06eb)
 ## Table of Contents
 
 - [Features](#features)
